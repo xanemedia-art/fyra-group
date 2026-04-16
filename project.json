@@ -1,0 +1,30 @@
+{
+  "overview": "Fyra Group is a high-end luxury hospitality website for a premium hotel chain in Manali, Himachal Pradesh. The site showcases three distinct properties — Fyra Hotel, Fyra Aashiyana, and Fyra Aashapuri Snow Line — with a \"Quiet Luxury\" aesthetic blending modern minimalism with Himalayan grandeur. Features include cinematic hero imagery, parallax scrolling, property detail pages, masonry gallery, testimonials carousel, activities guide, and a contact form with WhatsApp concierge integration.",
+  "features": [
+    "Cinematic hero with Property Selector widget",
+    "Three property detail pages with Overview, Gallery, and Booking sections",
+    "Masonry image gallery with responsive grid",
+    "Guest Stories testimonial carousel with 5 reviews",
+    "Activities Nearby curated experience guide",
+    "Contact form with inquiry fields and static map placeholder",
+    "Floating WhatsApp concierge button",
+    "Sticky gold Book Your Stay bar",
+    "Parallax scrolling mountain backgrounds",
+    "Individual property accent colors",
+    "Playfair Display + Montserrat luxury typography",
+    "Snow Peak White, Deep Forest Green, Champagne Gold palette"
+  ],
+  "category": "hospitality-travel",
+  "tags": [
+    "luxury",
+    "hospitality",
+    "hotel",
+    "himalayas",
+    "manali",
+    "travel",
+    "showcase",
+    "parallax",
+    "gallery"
+  ],
+  "last_updated": "2026-04-14T07:05:06.103Z"
+}

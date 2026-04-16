@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Playfair Display";
+    --font-body: "Montserrat";
+    --font-mono: "JetBrains Mono";
+    --radius: 0.5rem;
+
+    /* Snow Peak White background */
+    --background: 0.978 0.005 82;
+    /* Deep Forest Green foreground */
+    --foreground: 0.2 0.04 145;
+
+    --card: 0.992 0.003 82;
+    --card-foreground: 0.2 0.04 145;
+    --popover: 0.992 0.003 82;
+    --popover-foreground: 0.2 0.04 145;
+
+    /* Primary = Deep Forest Green */
+    --primary: 0.2 0.04 145;
+    --primary-foreground: 0.978 0.005 82;
+
+    --secondary: 0.955 0.008 82;
+    --secondary-foreground: 0.28 0.03 145;
+    --muted: 0.955 0.008 82;
+    --muted-foreground: 0.52 0.018 145;
+
+    /* Champagne Gold accent */
+    --accent: 0.72 0.1 78;
+    --accent-foreground: 0.2 0.04 145;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.91 0.008 82;
+    --input: 0.91 0.008 82;
+    --ring: 0.72 0.1 78;
+
+    /* chart-1: Champagne Gold, chart-2: Warm Amber, chart-3: Icy Blue */
+    --chart-1: 0.72 0.1 78;
+    --chart-2: 0.68 0.12 55;
+    --chart-3: 0.78 0.08 218;
+    --chart-4: 0.2 0.04 145;
+    --chart-5: 0.55 0.06 145;
+
+    --sidebar: 0.992 0.003 82;
+    --sidebar-foreground: 0.2 0.04 145;
+    --sidebar-primary: 0.2 0.04 145;
+    --sidebar-primary-foreground: 0.978 0.005 82;
+    --sidebar-accent: 0.72 0.1 78;
+    --sidebar-accent-foreground: 0.2 0.04 145;
+    --sidebar-border: 0.91 0.008 82;
+    --sidebar-ring: 0.72 0.1 78;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), "Playfair Display", serif;
+  }
+
+  .font-body {
+    font-family: var(--font-body), "Montserrat", sans-serif;
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Luxury spacing utilities */
+  .spacing-hero {
+    @apply py-24 md:py-36 lg:py-44;
+  }
+
+  .spacing-section {
+    @apply py-14 md:py-20 lg:py-28;
+  }
+
+  /* Property brand accent colors as CSS custom props */
+  .accent-gold {
+    color: #c9a84c;
+  }
+
+  .accent-amber {
+    color: #d4933e;
+  }
+
+  .accent-icy-blue {
+    color: #7ec8e3;
+  }
+
+  .border-gold {
+    border-color: #c9a84c;
+  }
+
+  .border-amber {
+    border-color: #d4933e;
+  }
+
+  .border-icy-blue {
+    border-color: #7ec8e3;
+  }
+
+  .bg-gold {
+    background-color: #c9a84c;
+  }
+
+  .bg-forest {
+    background-color: #1a2e1a;
+  }
+
+  .text-forest {
+    color: #1a2e1a;
+  }
+
+  .text-gold {
+    color: #c9a84c;
+  }
+
+  /* Subtle elevation shadows */
+  .shadow-refined {
+    box-shadow: 0 1px 4px rgba(26, 46, 26, 0.04), 0 1px 2px
+      rgba(26, 46, 26, 0.02);
+  }
+
+  .shadow-card {
+    box-shadow: 0 2px 10px rgba(26, 46, 26, 0.06), 0 1px 3px
+      rgba(26, 46, 26, 0.04);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 8px 32px rgba(26, 46, 26, 0.1), 0 2px 8px
+      rgba(26, 46, 26, 0.06);
+  }
+
+  /* Parallax imagery utilities */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Gold underline effect */
+  .gold-underline {
+    position: relative;
+  }
+
+  .gold-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #c9a84c;
+  }
+
+  .gold-underline-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Letter spacing for luxury feel */
+  .tracking-luxury {
+    letter-spacing: 0.18em;
+  }
+
+  .tracking-wide-xl {
+    letter-spacing: 0.25em;
+  }
+
+  /* Nav link hover style */
+  .nav-link {
+    @apply relative text-sm tracking-wide font-body transition-smooth;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #c9a84c;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Carousel utilities */
+  .carousel-snap {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-item-snap {
+    scroll-snap-align: start;
+  }
+}
