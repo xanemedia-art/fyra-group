@@ -69,10 +69,10 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 export function ActivitiesPage() {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       {/* Header */}
       <section className="bg-muted/30 spacing-section border-b border-border">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export function ActivitiesPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4"
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground mb-4"
           >
             Activities &amp; Experiences
           </motion.h1>
@@ -93,7 +93,7 @@ export function ActivitiesPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-base text-muted-foreground leading-relaxed"
+            className="font-body text-sm sm:text-base text-muted-foreground leading-relaxed"
           >
             From exhilarating mountain adventures to quiet cultural walks, Fyra
             Group curates experiences that make the Himalayas personal.
@@ -103,8 +103,8 @@ export function ActivitiesPage() {
 
       {/* Activity Grid */}
       <section className="bg-background spacing-section">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {ACTIVITIES.map((activity, index) => (
               <motion.div
                 key={activity.id}
@@ -115,7 +115,7 @@ export function ActivitiesPage() {
                 className="group bg-card border border-border shadow-card overflow-hidden hover:shadow-elevated transition-smooth"
                 data-ocid={`activity-card-${index}`}
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative aspect-video overflow-hidden">
                   <img
                     src={activity.image}
                     alt={activity.title}
@@ -123,7 +123,7 @@ export function ActivitiesPage() {
                     loading="lazy"
                   />
                   <div
-                    className="absolute top-4 left-4 px-3 py-1 font-body text-xs tracking-wide text-forest"
+                    className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 font-body text-xs tracking-wide text-forest"
                     style={{
                       backgroundColor:
                         CATEGORY_COLORS[activity.category] || "#C9A84C",
@@ -132,7 +132,7 @@ export function ActivitiesPage() {
                     {activity.category}
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   <p className="font-body text-xs text-muted-foreground mb-2">
                     {activity.duration}
                   </p>
@@ -144,7 +144,7 @@ export function ActivitiesPage() {
                   </p>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 font-body text-xs tracking-wide text-gold border-b border-gold pb-0.5 hover:gap-3 transition-smooth"
+                    className="inline-flex items-center gap-2 font-body text-xs tracking-wide text-gold border-b border-gold pb-0.5 hover:gap-3 transition-smooth min-h-[44px] sm:min-h-0"
                   >
                     Enquire <ArrowRight className="w-3 h-3" />
                   </Link>

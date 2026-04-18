@@ -1,0 +1,12 @@
+import { c as createLucideIcon } from "./index-B49hhkqB.js";
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode = [["path", { d: "m8 3 4 8 5-5 5 15H2L8 3z", key: "otkl63" }]];
+const Mountain = createLucideIcon("mountain", __iconNode);
+export {
+  Mountain as M
+};

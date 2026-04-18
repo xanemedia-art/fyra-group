@@ -6,7 +6,7 @@ import {
   createRoute,
   createRouter,
 } from "@tanstack/react-router";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Layout } from "./components/Layout";
 
 // Lazy-load all pages
@@ -48,10 +48,19 @@ function PageLoader() {
   );
 }
 
+/** Scrolls to top on every route change */
+function ScrollToTop() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  });
+  return null;
+}
+
 // Root route with Layout wrapper
 const rootRoute = createRootRoute({
   component: () => (
     <Layout>
+      <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
         <Outlet />
       </Suspense>

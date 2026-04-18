@@ -7,7 +7,7 @@ const GALLERY_ITEMS = [
     src: "/assets/generated/fyra-hotel-hero.dim_1600x900.jpg",
     alt: "Fyra Hotel exterior at golden hour",
     category: "Fyra Hotel",
-    span: "col-span-2 row-span-2",
+    span: "sm:col-span-2 sm:row-span-2",
   },
   {
     src: "/assets/generated/aashiyana-hero.dim_1600x900.jpg",
@@ -31,7 +31,7 @@ const GALLERY_ITEMS = [
     src: "/assets/generated/fyra-hero-landscape.dim_1920x1080.jpg",
     alt: "Himalayan peaks at sunrise",
     category: "Landscapes",
-    span: "col-span-2",
+    span: "sm:col-span-2",
   },
   {
     src: "/assets/generated/aashiyana-hero.dim_1600x900.jpg",
@@ -126,10 +126,10 @@ export function GalleryPage() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       {/* Header */}
       <section className="bg-muted/30 spacing-section border-b border-border">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ export function GalleryPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4"
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground mb-4"
           >
             The Himalayan Frame
           </motion.h1>
@@ -150,7 +150,7 @@ export function GalleryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-base text-muted-foreground leading-relaxed"
+            className="font-body text-sm sm:text-base text-muted-foreground leading-relaxed"
           >
             Each image from our properties is a window into a world defined by
             light, landscape, and quiet luxury.
@@ -158,10 +158,10 @@ export function GalleryPage() {
         </div>
       </section>
 
-      {/* Masonry Grid */}
+      {/* Masonry Grid — 1col mobile, 2col sm, 3col lg */}
       <section className="bg-background spacing-section">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[220px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 sm:auto-rows-[220px]">
             {GALLERY_ITEMS.map((item, index) => (
               <motion.div
                 key={item.alt}
@@ -169,7 +169,7 @@ export function GalleryPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.06 }}
-                className={`relative overflow-hidden group cursor-pointer bg-muted ${item.span}`}
+                className={`relative overflow-hidden group cursor-pointer bg-muted aspect-video sm:aspect-auto ${item.span}`}
                 data-ocid={`gallery-item-${index}`}
               >
                 <img
@@ -179,7 +179,7 @@ export function GalleryPage() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/40 transition-smooth" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-smooth">
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-smooth">
                   <span className="font-body text-xs tracking-wide text-gold">
                     {item.category}
                   </span>
@@ -195,8 +195,8 @@ export function GalleryPage() {
 
       {/* Guest Stories Carousel */}
       <section className="bg-muted/30 spacing-section border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="text-center mb-10 sm:mb-14">
             <motion.p
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -211,14 +211,17 @@ export function GalleryPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-3xl md:text-4xl font-semibold text-foreground"
+              className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground"
             >
               Moments That Linger
             </motion.h2>
           </div>
 
-          <div className="relative" data-ocid="guest-stories-carousel">
-            {/* Cards track */}
+          {/* Carousel — padded so arrows don't overlap */}
+          <div
+            className="relative px-8 sm:px-12"
+            data-ocid="guest-stories-carousel"
+          >
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-700 ease-in-out"
@@ -227,22 +230,21 @@ export function GalleryPage() {
                 {GUEST_STORIES.map((story, index) => (
                   <div
                     key={story.author}
-                    className="w-full flex-shrink-0 px-0 sm:px-8 md:px-20 lg:px-40"
+                    className="w-full flex-shrink-0"
                     data-ocid={`guest-story-${index}`}
                   >
-                    <div className="bg-card border border-border shadow-card p-8 md:p-12 flex flex-col items-center text-center">
-                      {/* Stars */}
+                    <div className="bg-card border border-border shadow-card p-6 sm:p-8 md:p-12 flex flex-col items-center text-center">
                       <p
-                        className="text-gold text-lg tracking-widest mb-6"
+                        className="text-gold text-base sm:text-lg tracking-widest mb-5 sm:mb-6"
                         aria-label={`${story.rating} out of 5 stars`}
                       >
                         {"★".repeat(story.rating)}
                         {"☆".repeat(5 - story.rating)}
                       </p>
-                      <blockquote className="font-display text-lg md:text-xl italic text-foreground leading-relaxed mb-8 max-w-2xl">
+                      <blockquote className="font-display text-base sm:text-lg md:text-xl italic text-foreground leading-relaxed mb-6 sm:mb-8 max-w-2xl">
                         "{story.quote}"
                       </blockquote>
-                      <div className="border-t border-border pt-6 w-full max-w-xs">
+                      <div className="border-t border-border pt-5 sm:pt-6 w-full max-w-xs">
                         <p className="font-body text-sm font-semibold text-foreground">
                           {story.author}
                         </p>
@@ -259,13 +261,13 @@ export function GalleryPage() {
               </div>
             </div>
 
-            {/* Navigation arrows */}
+            {/* Navigation arrows — 44px touch targets, positioned outside content */}
             <button
               type="button"
               aria-label="Previous testimonial"
               onClick={() => resetAutoPlay(prev)}
               data-ocid="guest-stories-prev"
-              className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-card border border-border shadow-refined text-foreground hover:text-gold hover:border-gold transition-smooth"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center bg-card border border-border shadow-refined text-foreground hover:text-gold hover:border-gold transition-smooth"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -274,14 +276,14 @@ export function GalleryPage() {
               aria-label="Next testimonial"
               onClick={() => resetAutoPlay(next)}
               data-ocid="guest-stories-next"
-              className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-card border border-border shadow-refined text-foreground hover:text-gold hover:border-gold transition-smooth"
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center bg-card border border-border shadow-refined text-foreground hover:text-gold hover:border-gold transition-smooth"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* Dot indicators */}
+            {/* Dot indicators — finger-friendly */}
             <div
-              className="flex justify-center gap-2 mt-8"
+              className="flex justify-center gap-1 mt-6 sm:mt-8"
               role="tablist"
               aria-label="Guest story slides"
             >
@@ -294,8 +296,16 @@ export function GalleryPage() {
                   aria-label={`Go to testimonial ${index + 1}`}
                   onClick={() => resetAutoPlay(() => goTo(index))}
                   data-ocid={`guest-story-dot-${index}`}
-                  className={`w-1.5 h-1.5 transition-smooth ${currentSlide === index ? "bg-gold w-5" : "bg-muted-foreground/40 hover:bg-muted-foreground/60"}`}
-                />
+                  className="flex items-center justify-center min-w-[32px] min-h-[32px]"
+                >
+                  <span
+                    className={`block transition-smooth rounded-full ${
+                      currentSlide === index
+                        ? "bg-gold w-5 h-1.5"
+                        : "bg-muted-foreground/40 hover:bg-muted-foreground/60 w-1.5 h-1.5"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>

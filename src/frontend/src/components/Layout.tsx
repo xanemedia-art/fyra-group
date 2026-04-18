@@ -29,17 +29,19 @@ export function Layout({ children }: LayoutProps) {
   const year = new Date().getFullYear();
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
       <Header />
 
+      {/* pt-20 for fixed header, pb-14 for sticky bar */}
       <main className="flex-1 pt-20 pb-14">{children}</main>
 
       {/* Footer */}
       <footer className="bg-forest text-card pb-14 border-t border-foreground/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-12 sm:pt-16 pb-8">
+          {/* 4-col on lg, 2-col on sm, 1-col on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
             {/* Brand column */}
-            <div className="lg:col-span-1">
+            <div className="sm:col-span-2 lg:col-span-1">
               <div className="mb-5">
                 <div className="font-display text-2xl font-semibold tracking-luxury text-gold leading-none">
                   FYRA
@@ -48,37 +50,37 @@ export function Layout({ children }: LayoutProps) {
                   GROUP
                 </div>
               </div>
-              <p className="font-body text-sm text-card/60 leading-relaxed max-w-[220px]">
+              <p className="font-body text-sm text-card/60 leading-relaxed max-w-[260px]">
                 Himalayan luxury retreats in Manali. Where grandeur meets
                 stillness.
               </p>
-              <div className="flex items-center gap-4 mt-6">
+              <div className="flex items-center gap-5 mt-6">
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="text-card/40 hover:text-gold transition-smooth"
+                  className="text-card/40 hover:text-gold transition-smooth p-1"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-5 h-5" />
                 </a>
                 <a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="text-card/40 hover:text-gold transition-smooth"
+                  className="text-card/40 hover:text-gold transition-smooth p-1"
                 >
-                  <Facebook className="w-4 h-4" />
+                  <Facebook className="w-5 h-5" />
                 </a>
                 <a
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube"
-                  className="text-card/40 hover:text-gold transition-smooth"
+                  className="text-card/40 hover:text-gold transition-smooth p-1"
                 >
-                  <Youtube className="w-4 h-4" />
+                  <Youtube className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -93,7 +95,7 @@ export function Layout({ children }: LayoutProps) {
                   <li key={link.href}>
                     <Link
                       to={link.href}
-                      className="font-body text-sm text-card/60 hover:text-gold transition-smooth"
+                      className="font-body text-sm text-card/60 hover:text-gold transition-smooth block py-1"
                     >
                       {link.label}
                     </Link>
@@ -112,7 +114,7 @@ export function Layout({ children }: LayoutProps) {
                   <li key={link.href}>
                     <Link
                       to={link.href}
-                      className="font-body text-sm text-card/60 hover:text-gold transition-smooth"
+                      className="font-body text-sm text-card/60 hover:text-gold transition-smooth block py-1"
                     >
                       {link.label}
                     </Link>
@@ -134,7 +136,7 @@ export function Layout({ children }: LayoutProps) {
                 </p>
                 <a
                   href="tel:+919876543210"
-                  className="font-body text-sm text-card/60 hover:text-gold transition-smooth block"
+                  className="font-body text-sm text-card/60 hover:text-gold transition-smooth block py-1"
                 >
                   +91 98765 43210
                 </a>
@@ -149,23 +151,10 @@ export function Layout({ children }: LayoutProps) {
           </div>
 
           {/* Divider */}
-          <div className="border-t border-card/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-body text-xs text-card/40 text-center md:text-left">
+          <div className="border-t border-card/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+            <p className="font-body text-xs text-card/40 text-center sm:text-left">
               © {year} Fyra Group. All rights reserved. Manali, Himachal
               Pradesh.
-            </p>
-            <p className="font-body text-xs text-card/30 text-center">
-              Built with love using{" "}
-              <a
-                href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(
-                  typeof window !== "undefined" ? window.location.hostname : "",
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gold transition-smooth"
-              >
-                caffeine.ai
-              </a>
             </p>
           </div>
         </div>

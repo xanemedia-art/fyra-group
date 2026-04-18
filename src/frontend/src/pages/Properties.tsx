@@ -55,10 +55,10 @@ const PROPERTIES = [
 
 export function PropertiesPage() {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       {/* Header */}
       <section className="bg-muted/30 spacing-section border-b border-border">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export function PropertiesPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4"
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground mb-4"
           >
             Three Mountain Sanctuaries
           </motion.h1>
@@ -79,7 +79,7 @@ export function PropertiesPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-base text-muted-foreground leading-relaxed"
+            className="font-body text-sm sm:text-base text-muted-foreground leading-relaxed"
           >
             Each Fyra property is a distinct world — shaped by its landscape,
             its stories, and the people who make it come alive.
@@ -89,7 +89,7 @@ export function PropertiesPage() {
 
       {/* Property list */}
       <section className="bg-background spacing-section">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-14 sm:space-y-20">
           {PROPERTIES.map((property, index) => (
             <motion.div
               key={property.name}
@@ -97,13 +97,13 @@ export function PropertiesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
                 index % 2 !== 0 ? "lg:[&>*:first-child]:order-2" : ""
               }`}
               data-ocid={`property-row-${index}`}
             >
               {/* Image */}
-              <div className="relative overflow-hidden group h-80 lg:h-96">
+              <div className="relative overflow-hidden group aspect-video sm:aspect-[16/9] lg:aspect-auto lg:h-96">
                 <img
                   src={property.image}
                   alt={property.name}
@@ -123,14 +123,14 @@ export function PropertiesPage() {
                 >
                   {property.tagline}
                 </p>
-                <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-2">
+                <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-2">
                   {property.name}
                 </h2>
                 <p className="flex items-center gap-1.5 font-body text-xs text-muted-foreground mb-5">
-                  <MapPin className="w-3.5 h-3.5" />
+                  <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
                   {property.location}
                 </p>
-                <p className="font-body text-base text-muted-foreground leading-relaxed mb-6">
+                <p className="font-body text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
                   {property.description}
                 </p>
                 <ul className="grid grid-cols-2 gap-2 mb-8">
@@ -150,7 +150,7 @@ export function PropertiesPage() {
                 <Link
                   to={property.href}
                   data-ocid={`property-link-${index}`}
-                  className="inline-flex items-center gap-2 self-start font-body text-sm tracking-wide border-b pb-0.5 transition-smooth hover:gap-3"
+                  className="inline-flex items-center gap-2 self-start font-body text-sm tracking-wide border-b pb-0.5 transition-smooth hover:gap-3 min-h-[44px] items-end"
                   style={{
                     color: property.accent,
                     borderColor: property.accent,
