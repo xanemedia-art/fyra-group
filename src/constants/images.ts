@@ -139,6 +139,11 @@ export const IMAGES = {
     FOUNDER_BG: "/assets/hero/IMG_2805.webp",
   },
 
+  // CONTACT PAGE
+  CONTACT: {
+    HERO: "/assets/hero/IMG_2803.webp",
+  },
+
   // COMMON / UTILITY
   PLACEHOLDERS: {
     VALLEY_VIEW: "/assets/hero/IMG_2803.webp"

@@ -263,7 +263,7 @@ export function AboutPage() {
       {/* Timeline Milestones */}
       <section className="bg-background py-24 sm:py-40 relative overflow-hidden border-t border-border">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none">
-           <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.JPG')] bg-cover bg-center grayscale" />
+           <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.webp')] bg-cover bg-center grayscale" />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10">

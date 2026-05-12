@@ -203,7 +203,7 @@ export function ActivitiesPage() {
       {/* Bespoke Experiences CTA */}
       <section className="bg-muted py-24 sm:py-32 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03] pointer-events-none">
-           <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.JPG')] bg-cover bg-center" />
+           <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.webp')] bg-cover bg-center" />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center lg:text-left lg:flex lg:items-center lg:gap-20">

@@ -85,7 +85,7 @@ export function ContactPage() {
         <div 
           ref={imageRef}
           className="absolute inset-0 bg-cover bg-center hero-exhale"
-          style={{ backgroundImage: `url(${IMAGES.FYRA_HOTEL.AERIAL})` }}
+          style={{ backgroundImage: `url(${IMAGES.CONTACT.HERO})` }}
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <KineticText
@@ -262,7 +262,7 @@ export function ContactPage() {
       {/* Final Inquiry CTA */}
       <section className="bg-background py-24 sm:py-32 relative text-center border-t border-border overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none">
-           <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.JPG')] bg-cover bg-center grayscale" />
+           <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.webp')] bg-cover bg-center grayscale" />
         </div>
 
         <div className="max-w-3xl mx-auto px-4 relative z-10">

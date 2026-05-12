@@ -97,7 +97,7 @@ export function GalleryPage() {
       {/* Hero Header */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 bg-muted/30 border-b border-border overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-          <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.JPG')] bg-cover bg-center grayscale" />
+          <div className="absolute inset-0 bg-[url('/assets/hero/hero-hotel-aerial.webp')] bg-cover bg-center grayscale" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
@@ -208,7 +208,7 @@ export function GalleryPage() {
       {/* Testimonials - Editorial Style */}
       <section className="bg-muted py-24 sm:py-40 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none">
-           <div className="absolute inset-0 bg-[url('/assets/hero/hero-ashapuri-night.JPG')] bg-cover bg-center" />
+           <div className="absolute inset-0 bg-[url('/assets/hero/hero-ashapuri-night.webp')] bg-cover bg-center" />
         </div>
 
         <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
