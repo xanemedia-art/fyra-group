@@ -47,7 +47,7 @@ const PROPERTIES = [
     description:
       "Our most advanced property, built for climate-controlled comfort. Featuring Hot & Cold AC and top-tier facilities for a cozy stay even in the peak of winter.",
     href: "/properties/aashapuri-snow-inn",
-    accent: "#7EC8E3",
+    accent: "#C9A84C",
     location: "Manali, Himachal Pradesh",
     image: IMAGES.ASHAPURI.AERIAL,
   },
@@ -527,7 +527,7 @@ export function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="font-display text-2xl sm:text-3xl md:text-4xl text-card font-semibold mb-4"
+            className="font-display text-2xl sm:text-3xl md:text-4xl text-gold font-semibold mb-4"
             style={{
               textShadow:
                 "0 2px 16px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5)",
@@ -536,7 +536,7 @@ export function HomePage() {
             Your Himalayan Sanctuary Awaits
           </motion.h2>
           <p
-            className="font-body text-sm text-card/70 mb-8 max-w-md mx-auto"
+            className="font-body text-sm text-gold mb-8 max-w-md mx-auto"
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
           >
             Speak with our concierge to craft a bespoke itinerary. Every stay, a

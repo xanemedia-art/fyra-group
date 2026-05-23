@@ -23,7 +23,7 @@ import { useHeroParallax } from "../hooks/useHeroParallax";
 import { IMAGES } from "../constants/images";
 import { RATES } from "../constants/rates";
 
-const ACCENT = "#7EC8E3";
+const ACCENT = "#C9A84C";
 
 const AMENITIES = [
   { icon: Thermometer, label: "Hot & Cold AC" },

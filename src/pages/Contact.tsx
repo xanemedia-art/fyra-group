@@ -67,7 +67,7 @@ const PROPERTY_CONTACTS = [
     phone: "+91 97117 54726",
     whatsappHref: "https://wa.me/919711754726",
     image: IMAGES.ASHAPURI.HERO,
-    accent: "#7EC8E3",
+    accent: "#C9A84C",
   },
 ];
 
@@ -95,7 +95,7 @@ export function ContactPage() {
             Connect With Us
           </KineticText>
           <KineticText
-            className="font-display text-[32px] xs:text-4xl sm:text-5xl md:text-7xl font-semibold text-card mb-8 leading-tight text-shadow-premium"
+            className="font-display text-[32px] xs:text-4xl sm:text-5xl md:text-7xl font-semibold text-card mb-8 pb-4 leading-tight text-shadow-premium"
             delay={0.4}
           >
             Heartfelt Hospitality <br />
@@ -147,23 +147,35 @@ export function ContactPage() {
                         <div className="p-3 bg-muted rounded-sm">
                           <Phone className="w-4 h-4 text-gold" />
                         </div>
-                        <a
-                          href={`tel:${office.phone.replace(/\s/g, "")}`}
-                          className="font-body text-sm font-semibold text-foreground hover:text-gold transition-smooth underline-offset-4 hover:underline"
-                        >
-                          {office.phone}
-                        </a>
+                        {office.type === "Regional Sales" ? (
+                          <span className="font-body text-sm font-semibold text-foreground select-text cursor-text">
+                            {office.phone}
+                          </span>
+                        ) : (
+                          <a
+                            href={`tel:${office.phone.replace(/\s/g, "")}`}
+                            className="font-body text-sm font-semibold text-foreground hover:text-gold transition-smooth underline-offset-4 hover:underline"
+                          >
+                            {office.phone}
+                          </a>
+                        )}
                       </div>
                       <div className="flex gap-4 items-center group/link">
                         <div className="p-3 bg-muted rounded-sm">
                           <Mail className="w-4 h-4 text-gold" />
                         </div>
-                        <a
-                          href={`mailto:${office.email}`}
-                          className="font-body text-sm font-semibold text-foreground hover:text-gold transition-smooth break-all underline-offset-4 hover:underline"
-                        >
-                          {office.email}
-                        </a>
+                        {office.type === "Regional Sales" ? (
+                          <span className="font-body text-sm font-semibold text-foreground break-all select-text cursor-text">
+                            {office.email}
+                          </span>
+                        ) : (
+                          <a
+                            href={`mailto:${office.email}`}
+                            className="font-body text-sm font-semibold text-foreground hover:text-gold transition-smooth break-all underline-offset-4 hover:underline"
+                          >
+                            {office.email}
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

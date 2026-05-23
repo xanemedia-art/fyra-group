@@ -40,7 +40,7 @@ export function StickyBookBar() {
             to="/properties/aashapuri-snow-inn"
             className="font-body text-forest text-xs tracking-wide hover:opacity-70 transition-smooth whitespace-nowrap"
           >
-            Snow Inn
+            Fyra Ashapuri Snow Inn
           </Link>
         </div>
 

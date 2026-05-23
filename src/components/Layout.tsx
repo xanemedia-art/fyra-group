@@ -204,14 +204,23 @@ export function Layout({ children }: LayoutProps) {
                   Unit No. 849, 8th Floor, Astralis Tower, Sector 94, Noida,
                   Uttar Pradesh
                 </p>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-gold/40" />
-                  <a
-                    href="tel:+917065591801"
-                    className="font-body text-sm text-card hover:text-gold transition-smooth"
-                  >
-                    +91 70655 91801
-                  </a>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-4 h-4 text-gold/40" />
+                    <span
+                      className="font-body text-sm text-card select-text cursor-text"
+                    >
+                      +91 70655 91801
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-4 h-4 text-gold/40" />
+                    <span
+                      className="font-body text-sm text-card select-text cursor-text"
+                    >
+                      enquiry@fyrahotel.com
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -237,21 +246,19 @@ export function Layout({ children }: LayoutProps) {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-gold/40" />
-                    <a
-                      href="tel:+916354486936"
-                      className="font-body text-sm text-card hover:text-gold transition-smooth"
+                    <span
+                      className="font-body text-sm text-card select-text cursor-text"
                     >
                       +91 63544 86936
-                    </a>
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-4 h-4 text-gold/40" />
-                    <a
-                      href="mailto:gujratsales@fyrahotel.com"
-                      className="font-body text-sm text-card hover:text-gold transition-smooth"
+                    <span
+                      className="font-body text-sm text-card select-text cursor-text"
                     >
                       gujratsales@fyrahotel.com
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>

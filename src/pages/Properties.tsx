@@ -33,7 +33,7 @@ const PROPERTIES = [
     tagline: "Climate-Controlled Comfort",
     description: "Our most advanced property, built for ultimate luxury. Featuring Hot & Cold AC and top-tier facilities, ensuring a cozy stay even in the peak of Himalayan winter.",
     href: "/properties/aashapuri-snow-inn",
-    accent: "#7EC8E3",
+    accent: "#C9A84C",
     location: "Manali",
     image: IMAGES.ASHAPURI.AERIAL,
     icon: Wind,
@@ -161,7 +161,7 @@ export function PropertiesPage() {
       {/* Final Brand CTA */}
       <section className="bg-muted py-24 sm:py-32 border-t border-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <KineticText className="font-display text-3xl sm:text-4xl md:text-5xl mb-8 leading-tight">
+          <KineticText className="font-display text-3xl sm:text-4xl md:text-5xl mb-8 pb-4 leading-tight">
             Curating Moments, <br />
             <span className="italic font-normal">Defining Luxury.</span>
           </KineticText>
