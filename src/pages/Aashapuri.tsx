@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { BOOKING_URL } from "@/constants/booking";
 import {
   ArrowRight,
   Car,
@@ -153,13 +154,15 @@ export function AashapuriPage() {
             Manali."
           </KineticText>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-            <Link
-              to="/contact"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 font-body text-sm tracking-wide text-forest hover:brightness-110 transition-smooth min-h-[52px] rounded-sm shadow-lg"
               style={{ backgroundColor: ACCENT }}
             >
               Book Your Stay <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
             <button
               type="button"
               onClick={() => {
@@ -522,13 +525,16 @@ export function AashapuriPage() {
             relaxing escape to the hills, FYRA Ashapuri Snow Inn offers
             everything you need for an unforgettable stay in Manali.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-12 py-5 font-body text-sm font-semibold tracking-widest text-forest hover:brightness-110 transition-smooth rounded-sm shadow-xl"
             style={{ backgroundColor: ACCENT }}
           >
             BOOK YOUR STAY TODAY <ArrowRight className="w-5 h-5" />
-          </Link>
+          </a>
+
         </div>
       </section>
     </div>

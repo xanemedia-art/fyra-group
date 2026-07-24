@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CalendarDays, ChevronRight } from "lucide-react";
+import { BOOKING_URL } from "@/constants/booking";
 
 export function StickyBookBar() {
   return (
@@ -45,15 +46,18 @@ export function StickyBookBar() {
         </div>
 
         {/* CTA — always visible, large enough touch target */}
-        <Link
-          to="/contact"
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           data-ocid="sticky-book-cta"
           className="flex items-center gap-1.5 bg-forest text-gold font-body text-xs tracking-wide px-4 sm:px-5 py-2.5 hover:bg-foreground transition-smooth flex-shrink-0 min-h-[40px]"
         >
           Reserve Now
           <ChevronRight className="w-3.5 h-3.5" />
-        </Link>
+        </a>
       </div>
     </div>
   );
 }
+

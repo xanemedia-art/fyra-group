@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
+import { BOOKING_URL } from "@/constants/booking";
 import { useEffect, useRef, useState } from "react";
 import { 
   ChevronLeft, 
@@ -270,11 +271,14 @@ export function GalleryPage() {
             className="inline-block"
           >
             <a
-              href="/contact"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-12 py-5 bg-gold text-forest font-body text-sm font-semibold tracking-widest hover:brightness-110 transition-smooth rounded-sm shadow-xl"
             >
               BOOK YOUR STAY
             </a>
+
           </motion.div>
         </div>
       </section>

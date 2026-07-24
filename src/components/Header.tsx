@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { BOOKING_URL } from "@/constants/booking";
 
 const PROPERTIES_CHILDREN = [
   { label: "All Properties", href: "/properties" },
@@ -161,14 +162,15 @@ export function Header() {
 
           {/* Book CTA + mobile toggle */}
           <div className="flex items-center gap-3">
-            <button
-              type="button"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               data-ocid="header-book-cta"
-              onClick={() => handleContactChildClick("/contact")}
               className="hidden lg:inline-flex items-center px-5 py-2.5 bg-forest text-card font-body text-sm tracking-wide border border-forest hover:bg-gold hover:border-gold hover:text-forest transition-smooth"
             >
               Book Your Stay
-            </button>
+            </a>
             <button
               data-ocid="mobile-menu-toggle"
               className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-foreground rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -350,14 +352,16 @@ export function Header() {
 
               {/* Drawer footer CTA */}
               <div className="flex-shrink-0 px-4 sm:px-6 py-4 border-t border-border bg-card">
-                <button
-                  type="button"
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-ocid="mobile-book-cta"
-                  onClick={() => handleContactChildClick("/contact")}
-                  className="w-full text-center py-3.5 min-h-[44px] bg-forest text-card font-body text-sm tracking-wide hover:bg-gold hover:text-forest transition-smooth"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full text-center py-3.5 min-h-[44px] bg-forest text-card font-body text-sm tracking-wide hover:bg-gold hover:text-forest transition-smooth"
                 >
                   Book Your Stay
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>

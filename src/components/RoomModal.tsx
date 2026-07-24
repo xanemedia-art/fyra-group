@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Bed, Check, Maximize2, Users, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef } from "react";
+import { BOOKING_URL } from "@/constants/booking";
 
 export interface RoomDetail {
   name: string;
@@ -189,15 +190,18 @@ export function RoomModal({ room, accentColor, onClose }: RoomModalProps) {
                       per night
                     </p>
                   </div>
-                  <Link
-                    to="/contact"
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={onClose}
                     data-ocid="room.confirm_button"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 font-body text-sm tracking-wide text-card transition-smooth hover:opacity-90 min-h-[48px]"
                     style={accentBg}
                   >
                     Reserve This Room <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </a>
+
                 </div>
               </div>
             </dialog>
