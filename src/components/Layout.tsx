@@ -77,7 +77,7 @@ export function Layout({ children }: LayoutProps) {
                 FYRA – Where Hospitality Meets Heart. Providing unparalleled
                 luxury and mountain charm across Manali.
               </p>
-              <div className="flex items-center gap-5 pt-2">
+              <div className="flex items-center gap-4 pt-2">
                 <a
                   href="https://instagram.com"
                   className="text-gold/40 hover:text-gold transition-smooth"
@@ -95,6 +95,16 @@ export function Layout({ children }: LayoutProps) {
                   className="text-gold/40 hover:text-gold transition-smooth"
                 >
                   <Youtube className="w-5 h-5" />
+                </a>
+                <a
+                  href={LOGIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-ocid="footer-brand-login-cta"
+                  className="ml-2 inline-flex items-center gap-1.5 px-4 py-1.5 bg-gold/10 hover:bg-gold text-gold hover:text-forest border border-gold/30 font-body text-xs font-medium tracking-wider transition-smooth rounded-sm"
+                >
+                  <LogIn className="w-3.5 h-3.5" />
+                  Login
                 </a>
               </div>
             </div>
@@ -285,23 +295,13 @@ export function Layout({ children }: LayoutProps) {
             <p className="font-body text-[10px] text-card/40 tracking-widest">
               © {year} FYRA GROUP. ALL RIGHTS RESERVED. MANALI, HIMACHAL PRADESH.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex gap-8">
               <span className="font-body text-[10px] text-gold/40 hover:text-gold cursor-pointer transition-smooth">
                 PRIVACY POLICY
               </span>
               <span className="font-body text-[10px] text-gold/40 hover:text-gold cursor-pointer transition-smooth">
                 TERMS OF SERVICE
               </span>
-              <a
-                href={LOGIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-ocid="footer-login-cta"
-                className="font-body text-xs tracking-wider px-4 py-1.5 border border-gold/40 text-gold hover:bg-gold hover:text-forest transition-smooth rounded-sm inline-flex items-center gap-1.5 font-medium"
-              >
-                <LogIn className="w-3.5 h-3.5" />
-                LOGIN
-              </a>
             </div>
           </div>
         </div>
@@ -314,4 +314,5 @@ export function Layout({ children }: LayoutProps) {
     </div>
   );
 }
+
 
