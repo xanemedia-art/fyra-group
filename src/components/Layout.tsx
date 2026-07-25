@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import {
   Facebook,
   Instagram,
+  LogIn,
   Mail,
   MapPin,
   Phone,
@@ -12,6 +13,7 @@ import { Header } from "./Header";
 import { StickyBookBar } from "./StickyBookBar";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { CallButton } from "./CallButton";
+import { LOGIN_URL } from "@/constants/booking";
 
 interface LayoutProps {
   children: ReactNode;
@@ -31,6 +33,7 @@ const EXPLORE_LINKS = [
   { label: "Gallery", href: "/gallery" },
   { label: "Activities", href: "/activities" },
   { label: "Contact Us", href: "/contact" },
+  { label: "Login", href: LOGIN_URL, isExternal: true },
 ];
 
 function GrainOverlay() {
@@ -123,14 +126,26 @@ export function Layout({ children }: LayoutProps) {
               </h4>
               <ul className="space-y-4">
                 {EXPLORE_LINKS.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      to={link.href}
-                      className="font-body text-sm text-card/60 hover:text-gold transition-smooth flex items-center gap-2 group"
-                    >
-                      <div className="h-px w-0 group-hover:w-3 bg-gold transition-all duration-300" />
-                      {link.label}
-                    </Link>
+                  <li key={link.label}>
+                    {link.isExternal ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-sm text-card/60 hover:text-gold transition-smooth flex items-center gap-2 group"
+                      >
+                        <div className="h-px w-0 group-hover:w-3 bg-gold transition-all duration-300" />
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="font-body text-sm text-card/60 hover:text-gold transition-smooth flex items-center gap-2 group"
+                      >
+                        <div className="h-px w-0 group-hover:w-3 bg-gold transition-all duration-300" />
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -270,13 +285,23 @@ export function Layout({ children }: LayoutProps) {
             <p className="font-body text-[10px] text-card/40 tracking-widest">
               © {year} FYRA GROUP. ALL RIGHTS RESERVED. MANALI, HIMACHAL PRADESH.
             </p>
-            <div className="flex gap-8">
+            <div className="flex items-center gap-6">
               <span className="font-body text-[10px] text-gold/40 hover:text-gold cursor-pointer transition-smooth">
                 PRIVACY POLICY
               </span>
               <span className="font-body text-[10px] text-gold/40 hover:text-gold cursor-pointer transition-smooth">
                 TERMS OF SERVICE
               </span>
+              <a
+                href={LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-ocid="footer-login-cta"
+                className="font-body text-xs tracking-wider px-4 py-1.5 border border-gold/40 text-gold hover:bg-gold hover:text-forest transition-smooth rounded-sm inline-flex items-center gap-1.5 font-medium"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                LOGIN
+              </a>
             </div>
           </div>
         </div>
@@ -289,3 +314,4 @@ export function Layout({ children }: LayoutProps) {
     </div>
   );
 }
+
