@@ -180,28 +180,28 @@ export function Layout({ children }: LayoutProps) {
                 </div>
                 <div className="flex gap-3">
                   <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
-                  <div className="flex flex-col gap-1.5 font-body text-sm text-card/60">
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 font-body text-xs sm:text-sm text-card/60">
                     <a
                       href="tel:+919711754726"
-                      className="hover:text-gold transition-smooth"
+                      className="hover:text-gold transition-smooth whitespace-nowrap"
                     >
                       +91 97117 54726
                     </a>
                     <a
                       href="tel:+916354486936"
-                      className="hover:text-gold transition-smooth"
+                      className="hover:text-gold transition-smooth whitespace-nowrap"
                     >
                       +91 63544 86936
                     </a>
                     <a
                       href="tel:+917065591801"
-                      className="hover:text-gold transition-smooth"
+                      className="hover:text-gold transition-smooth whitespace-nowrap"
                     >
                       +91 70655 91801
                     </a>
                     <a
                       href="tel:+919510141821"
-                      className="hover:text-gold transition-smooth"
+                      className="hover:text-gold transition-smooth whitespace-nowrap"
                     >
                       +91 95101 41821
                     </a>
