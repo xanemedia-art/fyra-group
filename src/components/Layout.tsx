@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import {
+  ChevronDown,
   Facebook,
   Instagram,
   LogIn,
@@ -8,7 +9,8 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
-import type { ReactNode } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { useState, type ReactNode } from "react";
 import { Header } from "./Header";
 import { StickyBookBar } from "./StickyBookBar";
 import { WhatsAppButton } from "./WhatsAppButton";
@@ -41,6 +43,7 @@ function GrainOverlay() {
 }
 
 export function Layout({ children }: LayoutProps) {
+  const [showRegionalOffices, setShowRegionalOffices] = useState(false);
   const year = new Date().getFullYear();
 
   return (
@@ -197,97 +200,133 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          {/* New Regional Sales Offices Section */}
-          <div className="border-t border-gold/10 pt-16 mb-16">
-            <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
-              <h4 className="font-display text-2xl font-semibold text-gold">
-                Regional Sales Offices
-              </h4>
-              <div className="h-px flex-1 bg-gold/10 hidden md:block mx-8" />
-              <span className="font-body text-[10px] tracking-wide-xl text-gold/40 uppercase">
-                PAN-INDIA CONNECTIVITY
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
-              {/* Noida Office */}
-              <div className="bg-card/5 p-8 rounded-sm border border-gold/5 hover:border-gold/20 transition-smooth group">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-gold/10 rounded-full group-hover:bg-gold/20 transition-smooth">
-                    <MapPin className="w-5 h-5 text-gold" />
-                  </div>
-                  <div>
-                    <h5 className="font-display text-xl font-medium text-card group-hover:text-gold transition-smooth">
-                      North Sales Office (Noida)
-                    </h5>
-                    <p className="font-body text-[10px] text-gold/50 uppercase tracking-widest mt-1">
-                      NCR & North India
-                    </p>
-                  </div>
-                </div>
-                <p className="font-body text-sm text-card/60 mb-6 leading-relaxed">
-                  Unit No. 849, 8th Floor, Astralis Tower, Sector 94, Noida,
-                  Uttar Pradesh
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-gold/40" />
-                    <span
-                      className="font-body text-sm text-card select-text cursor-text"
-                    >
-                      +91 70655 91801
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-gold/40" />
-                    <span
-                      className="font-body text-sm text-card select-text cursor-text"
-                    >
-                      enquiry@fyrahotel.com
-                    </span>
-                  </div>
+          {/* Collapsible Regional Sales Offices Section */}
+          <div className="border-t border-gold/10 pt-10 mb-8">
+            <button
+              type="button"
+              onClick={() => setShowRegionalOffices(!showRegionalOffices)}
+              className="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 group text-left cursor-pointer focus:outline-none"
+              aria-expanded={showRegionalOffices}
+              aria-label="Toggle Regional Sales Offices details"
+            >
+              <div className="flex items-center gap-3">
+                <h4 className="font-display text-2xl font-semibold text-gold group-hover:brightness-125 transition-smooth">
+                  Regional Sales Offices
+                </h4>
+                <div className="p-1.5 rounded-full bg-gold/10 text-gold group-hover:bg-gold group-hover:text-forest transition-smooth flex items-center justify-center">
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      showRegionalOffices ? "rotate-180" : ""
+                    }`}
+                  />
                 </div>
               </div>
 
-              {/* Gujarat Office */}
-              <div className="bg-card/5 p-8 rounded-sm border border-gold/5 hover:border-gold/20 transition-smooth group">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-gold/10 rounded-full group-hover:bg-gold/20 transition-smooth">
-                    <MapPin className="w-5 h-5 text-gold" />
-                  </div>
-                  <div>
-                    <h5 className="font-display text-xl font-medium text-card group-hover:text-gold transition-smooth">
-                      Gujarat Sales Office (Vadodara)
-                    </h5>
-                    <p className="font-body text-[10px] text-gold/50 uppercase tracking-widest mt-1">
-                      Western Region
-                    </p>
-                  </div>
-                </div>
-                <p className="font-body text-sm text-card/60 mb-6 leading-relaxed">
-                  402-403, Prince Cube, Beside Gangotri Exotica, Gotri,
-                  Vadodara, Gujarat – 390021
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-gold/40" />
-                    <span
-                      className="font-body text-sm text-card select-text cursor-text"
-                    >
-                      +91 63544 86936
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-gold/40" />
-                    <span
-                      className="font-body text-sm text-card select-text cursor-text"
-                    >
-                      gujratsales@fyrahotel.com
-                    </span>
-                  </div>
-                </div>
+              <div className="flex items-center gap-4">
+                <span className="font-body text-xs text-gold/70 group-hover:text-gold transition-smooth font-medium underline underline-offset-4">
+                  {showRegionalOffices ? "Hide Contact Info" : "View Contact Info"}
+                </span>
+                <span className="font-body text-[10px] tracking-wide-xl text-gold/40 uppercase hidden md:inline">
+                  PAN-INDIA CONNECTIVITY
+                </span>
               </div>
-            </div>
+            </button>
+
+            <AnimatePresence>
+              {showRegionalOffices && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 pt-10 pb-6">
+                    {/* Noida Office */}
+                    <div className="bg-card/5 p-8 rounded-sm border border-gold/5 hover:border-gold/20 transition-smooth group">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="p-3 bg-gold/10 rounded-full group-hover:bg-gold/20 transition-smooth">
+                          <MapPin className="w-5 h-5 text-gold" />
+                        </div>
+                        <div>
+                          <h5 className="font-display text-xl font-medium text-card group-hover:text-gold transition-smooth">
+                            North Sales Office (Noida)
+                          </h5>
+                          <p className="font-body text-[10px] text-gold/50 uppercase tracking-widest mt-1">
+                            NCR & North India
+                          </p>
+                        </div>
+                      </div>
+                      <p className="font-body text-sm text-card/60 mb-6 leading-relaxed">
+                        Unit No. 849, 8th Floor, Astralis Tower, Sector 94, Noida,
+                        Uttar Pradesh
+                      </p>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <Phone className="w-4 h-4 text-gold/40" />
+                          <a
+                            href="tel:+917065591801"
+                            className="font-body text-sm text-card select-text hover:text-gold transition-smooth cursor-pointer"
+                          >
+                            +91 70655 91801
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Mail className="w-4 h-4 text-gold/40" />
+                          <a
+                            href="mailto:enquiry@fyrahotel.com"
+                            className="font-body text-sm text-card select-text hover:text-gold transition-smooth cursor-pointer"
+                          >
+                            enquiry@fyrahotel.com
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Gujarat Office */}
+                    <div className="bg-card/5 p-8 rounded-sm border border-gold/5 hover:border-gold/20 transition-smooth group">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="p-3 bg-gold/10 rounded-full group-hover:bg-gold/20 transition-smooth">
+                          <MapPin className="w-5 h-5 text-gold" />
+                        </div>
+                        <div>
+                          <h5 className="font-display text-xl font-medium text-card group-hover:text-gold transition-smooth">
+                            Gujarat Sales Office (Vadodara)
+                          </h5>
+                          <p className="font-body text-[10px] text-gold/50 uppercase tracking-widest mt-1">
+                            Western Region
+                          </p>
+                        </div>
+                      </div>
+                      <p className="font-body text-sm text-card/60 mb-6 leading-relaxed">
+                        402-403, Prince Cube, Beside Gangotri Exotica, Gotri,
+                        Vadodara, Gujarat – 390021
+                      </p>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <Phone className="w-4 h-4 text-gold/40" />
+                          <a
+                            href="tel:+916354486936"
+                            className="font-body text-sm text-card select-text hover:text-gold transition-smooth cursor-pointer"
+                          >
+                            +91 63544 86936
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Mail className="w-4 h-4 text-gold/40" />
+                          <a
+                            href="mailto:gujratsales@fyrahotel.com"
+                            className="font-body text-sm text-card select-text hover:text-gold transition-smooth cursor-pointer"
+                          >
+                            gujratsales@fyrahotel.com
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Footer Bottom */}
@@ -314,5 +353,6 @@ export function Layout({ children }: LayoutProps) {
     </div>
   );
 }
+
 
 
