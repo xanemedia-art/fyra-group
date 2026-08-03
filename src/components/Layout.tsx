@@ -178,23 +178,51 @@ export function Layout({ children }: LayoutProps) {
                     Prini, Manali, HP – 175131
                   </p>
                 </div>
-                <div className="flex gap-3 items-center">
-                  <Phone className="w-4 h-4 text-gold flex-shrink-0" />
-                  <a
-                    href="tel:+919711754726"
-                    className="font-body text-sm text-card/60 hover:text-gold transition-smooth"
-                  >
-                    +91 97117 54726
-                  </a>
+                <div className="flex gap-3">
+                  <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
+                  <div className="flex flex-col gap-1.5 font-body text-sm text-card/60">
+                    <a
+                      href="tel:+919711754726"
+                      className="hover:text-gold transition-smooth"
+                    >
+                      +91 97117 54726
+                    </a>
+                    <a
+                      href="tel:+916354486936"
+                      className="hover:text-gold transition-smooth"
+                    >
+                      +91 63544 86936
+                    </a>
+                    <a
+                      href="tel:+917065591801"
+                      className="hover:text-gold transition-smooth"
+                    >
+                      +91 70655 91801
+                    </a>
+                    <a
+                      href="tel:+919510141821"
+                      className="hover:text-gold transition-smooth"
+                    >
+                      +91 95101 41821
+                    </a>
+                  </div>
                 </div>
-                <div className="flex gap-3 items-center">
-                  <Mail className="w-4 h-4 text-gold flex-shrink-0" />
-                  <a
-                    href="mailto:enquiry@fyrahotel.com"
-                    className="font-body text-sm text-card/60 hover:text-gold transition-smooth break-words"
-                  >
-                    enquiry@fyrahotel.com
-                  </a>
+                <div className="flex gap-3">
+                  <Mail className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
+                  <div className="flex flex-col gap-1.5 font-body text-sm text-card/60 break-all">
+                    <a
+                      href="mailto:enquiry@fyrahotel.com"
+                      className="hover:text-gold transition-smooth"
+                    >
+                      enquiry@fyrahotel.com
+                    </a>
+                    <a
+                      href="mailto:gujaratsales@fyrahotel.com"
+                      className="hover:text-gold transition-smooth"
+                    >
+                      gujaratsales@fyrahotel.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
